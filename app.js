@@ -16,6 +16,8 @@ function loadEventListeners() {
   taskList.addEventListener('click', removeTask);
   //Clear Text event
   clearBtn.addEventListener('click', clearTasks);
+  //filter tasks event LEFT OFF HERE NEED TO MAKE FUNCTION OF EVENT
+  filter.addEvenetListener('keyup', filterTasks);
 }
 
 //Add Task
@@ -55,3 +57,16 @@ function removeTask(e) {
     }
   }
 }
+
+//Clear Task
+function clearTasks(e) {
+  // taskList.innerHTML('');
+  //faster
+  while(taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild)
+  }
+  //https://jsperf.com/innerhtml-vs-removechild
+
+  }
+
+
