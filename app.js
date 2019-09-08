@@ -16,7 +16,7 @@ function loadEventListeners() {
   taskList.addEventListener('click', removeTask);
   //Clear Text event
   clearBtn.addEventListener('click', clearTasks);
-  //filter tasks event LEFT OFF HERE NEED TO MAKE FUNCTION OF EVENT
+  //filter tasks event LEFT OFF HERE NEED TO MAKE FUNCTION OF EVENT!!!!
   filter.addEvenetListener('keyup', filterTasks);
 }
 
