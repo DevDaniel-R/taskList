@@ -12,6 +12,10 @@ const taskInput = document.querySelector("#task");
 function loadEventListeners() {
   //Add task event
   form.addEventListener("submit", addTask);
+  //Remove task event
+  taskList.addEventListener('click', removeTask);
+  //Clear Text event
+  clearBtn.addEventListener('click', clearTasks);
 }
 
 //Add Task
@@ -27,11 +31,11 @@ function addTask(e) {
   //Creat text node and append to li
   li.appendChild(document.createTextNode(taskInput.value));
   //Create new link element
-  const link = document.createElement("a");
+  const link = document.createElement('a');
   //add class
   link.className = "delete-item secondary-content";
   //add icon html
-  link.innerHTML = '<i class= "fa fa-remove"></i>';
+  link.innerHTML = '<i class="far fa-trash-alt"></i>';
   //Append the link to Li
   li.appendChild(link);
 
@@ -42,4 +46,12 @@ function addTask(e) {
   taskInput.value = "";
 
   e.preventDefault();
+}
+
+//remove task
+function removeTask(e) {
+    if(e.target.parentElement.classList.contains('delete-item')) {
+      if(confirm('are you sure?')){ e.target.parentElement.parentElement.remove();
+    }
+  }
 }
